@@ -1,113 +1,296 @@
-import Image from 'next/image'
+import React from "react";
+import NavBar from "@/components/NavBar";
+import Image from "next/image";
+import { EventTable } from "@/components/Table/EventTable";
+import { columns } from "@/components/Table/columns";
+import Achievements from "@/components/Achievements";
+import YoutubeVideoComponent from "@/components/YoutubeVideoComponent";
+import { FaTwitch, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
-export default function Home() {
+const getEventData = () => {
+  return [
+    {
+      date: "2023-09-01",
+      event_details: "Gaming Night",
+      location: "Central Park",
+      attendance: "150",
+      discord_link: "https://discord.gg/abcd1234",
+    },
+    {
+      date: "2023-09-05",
+      event_details: "Music Jam",
+      location: "West Auditorium",
+      attendance: "200",
+      discord_link: "https://discord.gg/efgh5678",
+    },
+    {
+      date: "2023-09-10",
+      event_details: "Tech Talk",
+      location: "City Hall",
+      attendance: "300",
+      discord_link: "https://discord.gg/ijkl9012",
+    },
+    {
+      date: "2023-09-15",
+      event_details: "Book Reading",
+      location: "Local Library",
+      attendance: "80",
+      discord_link: "https://discord.gg/mnop3456",
+    },
+    {
+      date: "2023-09-20",
+      event_details: "Food Festival",
+      location: "East Plaza",
+      attendance: "500",
+      discord_link: "https://discord.gg/qrst6789",
+    },
+    {
+      date: "2023-09-25",
+      event_details: "Art Exhibition",
+      location: "Museum of Art",
+      attendance: "120",
+      discord_link: "https://discord.gg/uvwx0123",
+    },
+    {
+      date: "2023-09-28",
+      event_details: "Film Screening",
+      location: "Main Theater",
+      attendance: "220",
+      discord_link: "https://discord.gg/yzab4567",
+    },
+    {
+      date: "2023-09-30",
+      event_details: "Dance Workshop",
+      location: "Dance Studio",
+      attendance: "60",
+      discord_link: "https://discord.gg/cdef7890",
+    },
+    {
+      date: "2023-10-02",
+      event_details: "Poetry Slam",
+      location: "Café Poetica",
+      attendance: "90",
+      discord_link: "https://discord.gg/ghij2345",
+    },
+    {
+      date: "2023-10-05",
+      event_details: "Comedy Night",
+      location: "Comedy Club",
+      attendance: "170",
+      discord_link: "https://discord.gg/klmn5678",
+    },
+    {
+      date: "2023-09-25",
+      event_details: "Art Exhibition",
+      location: "Museum of Art",
+      attendance: "120",
+      discord_link: "https://discord.gg/uvwx0123",
+    },
+    {
+      date: "2023-09-28",
+      event_details: "Film Screening",
+      location: "Main Theater",
+      attendance: "220",
+      discord_link: "https://discord.gg/yzab4567",
+    },
+    {
+      date: "2023-09-30",
+      event_details: "Dance Workshop",
+      location: "Dance Studio",
+      attendance: "60",
+      discord_link: "https://discord.gg/cdef7890",
+    },
+  ];
+};
+
+const getYoutubeData = () => {
+  return {
+    videoSrc: "https://www.youtube.com/embed/ih9PBGVVOO4?si=O1G2k4lK6dkhpuZM",
+    videoTitle: "YouTube video player",
+    tagText: "[Something cool]",
+    text: "Something",
+  };
+};
+
+const page = async () => {
+  const achievements = [
+    {
+      imageURL: "hhjak",
+      title: "Somethinf",
+      date: "Spring 2027",
+    },
+    {
+      imageURL: "hhjak",
+      title: "Somethinf",
+      date: "Spring 2027",
+    },
+    {
+      imageURL: "hhjak",
+      title: "Somethinf",
+      date: "Spring 2027",
+    },
+  ];
+  const data = await getEventData();
+  const youtubeData = await getYoutubeData();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <main className="bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800 min-h-screen">
+      <NavBar />
+      <section className="min-h-screen bg-white -z-10">
+        <img
+          src="/hero.jpg"
+          alt="hero"
+          className="object-cover h-auto sm:h-screen w-full"
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+      </section>
+      <section className="min-h-screen text-white p-8 sm:p-16">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="inline-flex flex-row items-center space-x-2">
+            <span>
+              <hr className="h-1 w-16" />
+            </span>{" "}
+            <span className="text-3xl tracking-wide font-bold">
+              Upcoming Events
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+            <span>
+              <hr className="h-1 w-16" />
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          </h1>
+          <div className="m-4 w-full">
+            <EventTable columns={columns} data={data} />
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <div>
+            <h2>Arena Address</h2>
+            <p>798 Oakland Drive Kalamazoo, MI 49008</p>
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen p-8 sm:p-16">
+        <div className="flex flex-col justify-center items-center ">
+          <h1 className="text-white text-2xl mb-20">Our values</h1>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col-reverse sm:flex-row-reverse p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-6xl uppercase">Growth</h2>
+                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <p className="pt-4 text-md">
+                  We believe in Community. From our weekly events to our annual
+                  festivals and charity fundraisers, we strive to build
+                  connections with one-another beyond just the realm of gaming.
+                  With games serving as a common ground to meet over, we forge
+                  life-long friendships and lift each other up.
+                </p>
+              </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
+              ></img>
+            </div>
+            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col-reverse sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-6xl uppercase">Growth</h2>
+                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <p className="pt-4 text-md">
+                  We believe in Community. From our weekly events to our annual
+                  festivals and charity fundraisers, we strive to build
+                  connections with one-another beyond just the realm of gaming.
+                  With games serving as a common ground to meet over, we forge
+                  life-long friendships and lift each other up.
+                </p>
+              </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
+              ></img>
+            </div>
+            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col-reverse sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-6xl uppercase">Growth</h2>
+                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <p className="pt-4 text-md">
+                  We believe in Community. From our weekly events to our annual
+                  festivals and charity fundraisers, we strive to build
+                  connections with one-another beyond just the realm of gaming.
+                  With games serving as a common ground to meet over, we forge
+                  life-long friendships and lift each other up.
+                </p>
+              </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
+              ></img>
+            </div>
+            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col-reverse sm:flex-row-reverse p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-6xl uppercase">Growth</h2>
+                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <p className="pt-4 text-md">
+                  We believe in Community. From our weekly events to our annual
+                  festivals and charity fundraisers, we strive to build
+                  connections with one-another beyond just the realm of gaming.
+                  With games serving as a common ground to meet over, we forge
+                  life-long friendships and lift each other up.
+                </p>
+              </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
+              ></img>
+            </div>
+            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen p-8 sm:p-16">
+        <div className="flex flex-col justify-center items-center text-white">
+          <h1>Recent Achievements</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {achievements.map((data) => (
+              <Achievements data={data} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen p-8 sm:p-16">
+        <div className="flex flex-col justify-center items-center">
+          <h1>Latest Video</h1>
+          <YoutubeVideoComponent data={youtubeData} />
+        </div>
+      </section>
+      <footer className="p-4">
+        <div className="flex flex-col justify-center items-center space-y-4">
+          <h1>Follow Us</h1>
+          <div className="flex flex-row justify-center items-center">
+            <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl mt-4">
+              <Link href="/">
+                <FaTwitter />
+              </Link>
+              <Link href="/">
+                <FaYoutube />
+              </Link>
+              <Link href="/">
+                <FaTwitch />
+              </Link>
+              <Link href="/">
+                <FaInstagram />
+              </Link>
+            </ul>
+          </div>
+          <span>© 2023 Club Esports at WMU</span>
+        </div>
+      </footer>
     </main>
-  )
-}
+  );
+};
+
+export default page;
