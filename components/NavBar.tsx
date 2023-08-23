@@ -14,7 +14,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-violet-950">
+    <nav className="sticky top-0 bg-violet-950 z-50">
       <div className="p-2 flex flex-row justify-between sm:w-[80%] items-center mx-auto">
         <div className="flex flex-row space-x-2 justify-center items-center">
           <Link href="/">
@@ -69,7 +69,7 @@ const NavBar = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-lg"
+            className="fixed top-0 right-0 w-64 h-full bg-violet-950 text-white z-50 shadow-lg"
           >
             <div className="p-4">
               <button onClick={() => setMenuOpen(false)} className="mb-4">
