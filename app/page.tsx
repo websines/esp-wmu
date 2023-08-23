@@ -206,7 +206,7 @@ const page = async () => {
           <div className="flex flex-col justify-center items-center mt-8">
             <div className="flex flex-col-reverse sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
               <div className="flex flex-col space-y-2">
-                <h2 className="text-6xl font-bold italic uppercase text-shadow shadow-red-500">
+                <h2 className="text-4xl sm:text-6xl font-bold italic uppercase text-shadow shadow-red-500">
                   COMMUNITY
                 </h2>
                 <span className="text-sm text-red-900">
