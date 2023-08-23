@@ -14,11 +14,11 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="p-4 sticky top-0 bg-black">
+    <nav className="sticky top-0 bg-violet-950">
       <div className="p-2 flex flex-row justify-between sm:w-[80%] items-center mx-auto">
-        <div className="flex flex-row space-x-2 items-center">
+        <div className="flex flex-row space-x-2 justify-center items-center">
           <Link href="/">
-            <img src="" alt="logo" />
+            <img src="/horse.png" alt="logo" className="w-12 h-12" />
           </Link>
           <h1 className="text-white text-xl font-semibold italic">
             Club Esports at WMU

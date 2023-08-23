@@ -85,3 +85,14 @@
   background-color: rgba(128, 0, 128, 0.6); /* Purple color with 60% opacity */
   z-index: -1; /* Make sure the overlay doesn't cover the content */
 }
+
+.local-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 0, 6, 0.35); /* Purple color with 60% opacity */
+  z-index: 1; /* Make sure the overlay doesn't cover the content */
+}

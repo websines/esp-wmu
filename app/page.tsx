@@ -144,10 +144,10 @@ const page = async () => {
     >
       <NavBar />
       <section
-        className="min-h-screen bg-center bg-cover relative overlay flex items-center justify-center"
+        className="min-h-screen bg-center bg-cover relative local-overlay flex items-center justify-center"
         style={{ backgroundImage: 'url("/header_bg.jpg")' }}
       >
-        <div className="text-center p-4">
+        <div className="text-center p-4 z-10">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white">
             Club Esports at WMU
           </h1>
