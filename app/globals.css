@@ -82,7 +82,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(128, 0, 128, 0.6); /* Purple color with 60% opacity */
+  background-color: #581c87; /* Purple color with 60% opacity */
+  opacity: 0.8;
   z-index: -1; /* Make sure the overlay doesn't cover the content */
 }
 

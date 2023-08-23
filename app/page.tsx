@@ -5,7 +5,13 @@ import { EventTable } from "@/components/Table/EventTable";
 import { columns } from "@/components/Table/columns";
 import Achievements from "@/components/Achievements";
 import YoutubeVideoComponent from "@/components/YoutubeVideoComponent";
-import { FaTwitch, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import {
+  FaTwitch,
+  FaTwitter,
+  FaYoutube,
+  FaInstagram,
+  FaDiscord,
+} from "react-icons/fa";
 import Link from "next/link";
 
 const getEventData = () => {
@@ -161,13 +167,13 @@ const page = async () => {
         <div className="flex flex-col items-center justify-center">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
-              <hr className="h-1 w-16" />
+              <hr className="h-2 w-20 border-red-500" />
             </span>{" "}
-            <span className="text-3xl tracking-wide font-bold">
+            <span className="text-3xl tracking-wide font-bold italic uppercase">
               Upcoming Events
             </span>
             <span>
-              <hr className="h-1 w-16" />
+              <hr className="h-1 w-20 border-red-500" />
             </span>
           </h1>
           <div className="m-4 w-full">

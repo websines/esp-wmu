@@ -16,6 +16,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
+import { FaDiscord } from "react-icons/fa";
 
 interface EventTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -34,14 +36,17 @@ export function EventTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border p-4">
-      <Table>
+    <div className="rounded-md p-4">
+      <Table className="w-full border-gray-500 border-collapse">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead
+                    key={header.id}
+                    className="p-2 border-b text-red-600 text-xl font-semibold text-left"
+                  >
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -62,7 +67,10 @@ export function EventTable<TData, TValue>({
                 data-state={row.getIsSelected() && "selected"}
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell
+                    key={cell.id}
+                    className={cell.column.columnDef.cellClass}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
@@ -77,9 +85,21 @@ export function EventTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-      <button onClick={() => table.previousPage()}>Previos Page</button>
+      <div className="flex justify-between mt-4">
+        <button
+          onClick={() => table.previousPage()}
+          className="py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-500"
+        >
+          Previous Page
+        </button>
 
-      <button onClick={() => table.nextPage()}>Next Page</button>
+        <button
+          onClick={() => table.nextPage()}
+          className="py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-500"
+        >
+          Next Page
+        </button>
+      </div>
     </div>
   );
 }
