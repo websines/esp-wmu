@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -70,7 +70,24 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      textShadow: {
+        default: "2px 2px 4px rgba(0, 0, 0, 0.10)",
+        lg: "4px 4px 6px rgba(0, 0, 0, 0.10)",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate"), require("preline/plugin")],
+  corePlugins: {
+    textShadow: function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-shadow": {
+          "text-shadow": "2px 2px 4px rgba(0, 0, 0, 0.10)",
+        },
+        ".text-shadow-lg": {
+          "text-shadow": "4px 4px 6px rgba(0, 0, 0, 0.10)",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  },
+};
