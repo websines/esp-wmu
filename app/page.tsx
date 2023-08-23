@@ -145,7 +145,7 @@ const page = async () => {
   const achievements = await getAchievementsData();
   return (
     <main
-      className="min-h-screen bg-center bg-cover bg-no-repeat backdrop-blur-md overlay relative -z-10"
+      className="min-h-screen bg-center bg-cover bg-no-repeat backdrop-blur-md overlay relative"
       style={{ backgroundImage: 'url("/basic_bg_main.jpg")' }}
     >
       <NavBar />
