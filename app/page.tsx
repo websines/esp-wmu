@@ -113,8 +113,8 @@ const getYoutubeData = () => {
   };
 };
 
-const page = async () => {
-  const achievements = [
+const getAchievementsData = () => {
+  return [
     {
       imageURL: "hhjak",
       title: "Somethinf",
@@ -131,18 +131,32 @@ const page = async () => {
       date: "Spring 2027",
     },
   ];
+};
+
+const page = async () => {
   const data = await getEventData();
   const youtubeData = await getYoutubeData();
+  const achievements = await getAchievementsData();
   return (
-    <main className="bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800 min-h-screen">
+    <main
+      className="min-h-screen bg-center bg-cover bg-no-repeat backdrop-blur-md overlay relative"
+      style={{ backgroundImage: 'url("/basic_bg_main.jpg")' }}
+    >
       <NavBar />
-      <section className="min-h-screen bg-white -z-10">
-        <img
-          src="/hero.jpg"
-          alt="hero"
-          className="object-cover h-auto sm:h-screen w-full"
-        />
+      <section
+        className="min-h-screen bg-center bg-cover relative overlay flex items-center justify-center"
+        style={{ backgroundImage: 'url("/header_bg.jpg")' }}
+      >
+        <div className="text-center p-4">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white">
+            Club Esports at WMU
+          </h1>
+          <p className="mt-2 text-sm md:text-base lg:text-lg text-red-500">
+            Community, from Casual to Competitive
+          </p>
+        </div>
       </section>
+
       <section className="min-h-screen text-white p-8 sm:p-16">
         <div className="flex flex-col items-center justify-center">
           <h1 className="inline-flex flex-row items-center space-x-2">
