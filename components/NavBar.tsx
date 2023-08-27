@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaTwitch, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,10 +17,16 @@ const NavBar = () => {
 
   return (
     <nav className="sticky top-0 bg-violet-950 z-50">
-      <div className="p-2 flex flex-row justify-between sm:w-[80%] items-center mx-auto">
+      <div className="p-2 flex flex-row justify-between sm:mx-40 items-center mx-4">
         <div className="flex flex-row space-x-2 justify-center items-center">
           <Link href="/">
-            <img src="/horse.png" alt="logo" className="w-12 h-12" />
+            <Image
+              src="/horse.png"
+              alt="logo"
+              className="w-12 h-12"
+              height={1000}
+              width={1000}
+            />
           </Link>
           <h1 className="text-white text-xl font-semibold italic">
             Club Esports at WMU
