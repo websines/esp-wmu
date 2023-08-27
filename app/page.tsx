@@ -86,7 +86,7 @@ const Homepage = async () => {
         </div>
       </section>
       <section className="min-h-screen p-8 sm:p-16" id="about">
-        <div className="flex flex-col justify-center items-center p-8">
+        <div className="flex flex-col justify-center items-center sm:p-8">
           <h1 className="inline-flex flex-row items-center space-x-2 text-white my-8">
             <span>
               <hr className="h-2 w-20 border-red-500" />
