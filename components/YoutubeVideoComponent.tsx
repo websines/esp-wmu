@@ -9,10 +9,10 @@ const YoutubeVideoComponent = ({ data }: any) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
-      <h1 className="text-red-600 text-2xl my-4 font-semibold italic">
+      <h1 className="text-red-600 text-2xl my-4 font-semibold italic text-center">
         {data.text}
       </h1>
-      <span className="text-gray-200 text-2xl font-medium uppercase italic">
+      <span className="text-gray-200 text-2xl font-medium uppercase italic text-center">
         {data.tagText}
       </span>
     </div>

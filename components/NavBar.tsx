@@ -96,7 +96,7 @@ const NavBar = () => {
                 <li className="my-4">
                   <Link
                     href="#events"
-                    className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
+                    className=" rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
                     <span className="text-lg">Events</span>
                   </Link>
