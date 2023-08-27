@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaTwitch, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
@@ -72,24 +73,37 @@ const NavBar = () => {
             className="fixed top-0 right-0 w-64 h-full bg-violet-950 text-white z-50 shadow-lg"
           >
             <div className="p-4">
-              <button onClick={() => setMenuOpen(false)} className="mb-4">
-                <span className="block w-6 h-0.5 bg-black"></span>
-                <span className="block my-1 w-6 h-0.5 bg-black"></span>
-                <span className="block w-6 h-0.5 bg-black"></span>
+              <button onClick={() => setMenuOpen(false)} className="mb-4 ">
+                <AiOutlineClose className="w-8 h-8 m-4 border-red-500 border-1 border-solid" />
               </button>
               {/* Mobile menu content */}
-              <ul>
-                <li className="mb-2">
-                  <Link href="/">Events</Link>
+              <ul className="flex flex-col justify-between items-center w-full">
+                <li className="my-4">
+                  <Link
+                    href="/"
+                    className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
+                  >
+                    <span className="text-lg">Events</span>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <Link href="/">Events</Link>
+                <li className="my-4">
+                  <Link
+                    href="/"
+                    className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
+                  >
+                    <span className="text-lg">Events</span>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <Link href="/">Events</Link>
+                <li className="my-4">
+                  <Link
+                    href="/"
+                    className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
+                  >
+                    <span className="text-lg">Events</span>
+                  </Link>
                 </li>
               </ul>
-              <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl mt-4">
+              <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl mt-8">
                 <Link href="/">
                   <FaTwitter />
                 </Link>

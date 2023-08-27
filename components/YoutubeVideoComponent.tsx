@@ -2,7 +2,7 @@ const YoutubeVideoComponent = ({ data }: any) => {
   return (
     <div className="flex flex-col space-y-4 justify-center items-center">
       <iframe
-        className="sm:w-[600px] sm:h-[315px] w-[400px] h-[300px]"
+        className="sm:w-[600px] sm:h-[315px] w-[80%] h-[300px]"
         src={data.videoSrc}
         title={data.videoTitle}
         frameBorder="0"

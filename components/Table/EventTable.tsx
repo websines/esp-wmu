@@ -16,8 +16,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Link from "next/link";
-import { FaDiscord } from "react-icons/fa";
+// import Link from "next/link";
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
 interface EventTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -84,14 +84,14 @@ export function EventTable<TData, TValue>({
           onClick={() => table.previousPage()}
           className="py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-500"
         >
-          Previous Page
+          <AiOutlineArrowLeft />
         </button>
 
         <button
           onClick={() => table.nextPage()}
           className="py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-500"
         >
-          Next Page
+          <AiOutlineArrowRight />
         </button>
       </div>
     </div>
