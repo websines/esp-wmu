@@ -25,7 +25,7 @@ const NavBar = () => {
             Club Esports at WMU
           </h1>
         </div>
-        <div className="hidden md:flex flex-row space-x-6 items-center justify-between">
+        <div className="md:flex hidden flex-row space-x-6 items-center justify-between">
           {/* Desktop navbar items */}
           <ul className="text-white flex flex-row justify-center items-center space-x-2 text-lg uppercase font-semibold px-6">
             <Link href="/">
@@ -53,7 +53,7 @@ const NavBar = () => {
             </Link>
           </ul>
         </div>
-        <div className="md:hidden flex items-center">
+        <div className="sm:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <div className="flex flex-col space-y-1 py-2 px-3">
               <span className="bg-white w-6 h-0.5"></span>
