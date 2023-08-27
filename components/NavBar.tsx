@@ -32,7 +32,7 @@ const NavBar = () => {
             Club Esports at WMU
           </h1>
         </div>
-        <div className="sm:flex flex-row hidden space-x-6 items-center justify-between">
+        <div className="flex space-x-6 items-center justify-between">
           {/* Desktop navbar items */}
           <ul className="text-gray-300 flex flex-row justify-center items-center space-x-2 text-lg uppercase font-semibold px-6">
             <Link href="#events">

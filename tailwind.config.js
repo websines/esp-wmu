@@ -73,7 +73,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("preline/plugin")],
+  plugins: [require("tailwindcss-animate")],
   corePlugins: {
     textShadow: function ({ addUtilities }) {
       const newUtilities = {
