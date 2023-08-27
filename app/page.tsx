@@ -58,7 +58,7 @@ const Homepage = async () => {
         </div>
       </section>
 
-      <section className="min-h-screen text-white p-8 sm:p-16" id="events">
+      <section className="min-h-screen text-white p-4 sm:p-16" id="events">
         <div className="flex flex-col items-center justify-center">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
@@ -85,7 +85,7 @@ const Homepage = async () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen p-8 sm:p-16" id="about">
+      <section className="min-h-screen p-4 sm:p-16" id="about">
         <div className="flex flex-col justify-center items-center sm:p-8">
           <h1 className="inline-flex flex-row items-center space-x-2 text-white my-8">
             <span>
@@ -191,7 +191,7 @@ const Homepage = async () => {
         </div>
       </section>
 
-      <section className="min-h-screen p-8 sm:p-16">
+      <section className="min-h-screen p-4 sm:p-16">
         <div className="flex flex-col justify-center items-center text-white space-y-8">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
@@ -211,7 +211,7 @@ const Homepage = async () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen p-8 sm:p-16">
+      <section className="min-h-screen p-4 sm:p-16">
         <div className="flex flex-col justify-center items-center space-y-8">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
