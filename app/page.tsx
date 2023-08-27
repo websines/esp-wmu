@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import { EventTable } from "@/components/Table/EventTable";
@@ -34,6 +31,8 @@ const getAchievementsData = async () => {
   const data = await client.fetch(query);
   return data;
 };
+
+export const revalidate = 5;
 
 const Homepage = async () => {
   const data = await getEventData();
