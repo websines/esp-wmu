@@ -25,17 +25,25 @@ const NavBar = () => {
             Club Esports at WMU
           </h1>
         </div>
-        <div className="md:flex hidden flex-row space-x-6 items-center justify-between">
+        <div className="hidden sm:flex flex-row space-x-6 items-center justify-between">
           {/* Desktop navbar items */}
-          <ul className="text-white flex flex-row justify-center items-center space-x-2 text-lg uppercase font-semibold px-6">
-            <Link href="/">
-              <li>Events</li>
+          <ul className="text-gray-300 flex flex-row justify-center items-center space-x-2 text-lg uppercase font-semibold px-6">
+            <Link href="#events">
+              <li className="italic px-4 py-2 hover:bg-violet-900 rounded">
+                Events
+              </li>
             </Link>
-            <Link href="/">
-              <li>Events</li>
+            <Link href="#about">
+              <li className="italic px-4 py-2 hover:bg-violet-900 rounded">
+                About
+              </li>
             </Link>
-            <Link href="/">
-              <li>Events</li>
+            <Link
+              href="https://esportsgear.com/collections/western-michigan-university"
+              target="_blank"
+              className="italic px-4 py-2 hover:bg-violet-900 rounded"
+            >
+              <li>Merch</li>
             </Link>
           </ul>
           <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl">
@@ -80,7 +88,7 @@ const NavBar = () => {
               <ul className="flex flex-col justify-between items-center w-full">
                 <li className="my-4">
                   <Link
-                    href="/"
+                    href="#events"
                     className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
                     <span className="text-lg">Events</span>
@@ -88,7 +96,7 @@ const NavBar = () => {
                 </li>
                 <li className="my-4">
                   <Link
-                    href="/"
+                    href="#about"
                     className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
                     <span className="text-lg">Events</span>
@@ -96,7 +104,8 @@ const NavBar = () => {
                 </li>
                 <li className="my-4">
                   <Link
-                    href="/"
+                    href="https://esportsgear.com/collections/western-michigan-university"
+                    target="_blank"
                     className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
                     <span className="text-lg">Events</span>
