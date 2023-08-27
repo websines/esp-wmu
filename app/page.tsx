@@ -62,13 +62,13 @@ const Homepage = async () => {
         <div className="flex flex-col items-center justify-center">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
-              <hr className="h-2 w-20 border-red-500" />
+              <hr className="h-2 w-16 sm:w-20 border-red-500" />
             </span>{" "}
             <span className="text-xl sm:text-3xl tracking-wide font-bold italic uppercase">
               Upcoming Events
             </span>
             <span>
-              <hr className="h-1 w-20 border-red-500" />
+              <hr className="h-1 w-16 sm:w-20 border-red-500" />
             </span>
           </h1>
           <div className="m-8 w-full">
@@ -89,13 +89,13 @@ const Homepage = async () => {
         <div className="flex flex-col justify-center items-center sm:p-8">
           <h1 className="inline-flex flex-row items-center space-x-2 text-white my-8">
             <span>
-              <hr className="h-2 w-20 border-red-500" />
+              <hr className="h-2 w-16 sm:w-20 border-red-500" />
             </span>{" "}
             <span className="text-xl sm:text-3xl tracking-wide font-bold italic uppercase">
               Our Values
             </span>
             <span>
-              <hr className="h-2 w-20 border-red-500" />
+              <hr className="h-2 w-16 sm:w-20 border-red-500" />
             </span>
           </h1>
 
@@ -195,13 +195,13 @@ const Homepage = async () => {
         <div className="flex flex-col justify-center items-center text-white space-y-8">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
-              <hr className="h-2 w-20 border-red-500" />
+              <hr className="h-2 w-16 sm:w-20 border-red-500" />
             </span>{" "}
             <span className="text-lg sm:text-3xl tracking-wide font-bold italic uppercase">
               Recent Achievements
             </span>
             <span>
-              <hr className="h-1 w-20 border-red-500" />
+              <hr className="h-1 w-16 sm:w-20 border-red-500" />
             </span>
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -215,13 +215,13 @@ const Homepage = async () => {
         <div className="flex flex-col justify-center items-center space-y-8">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
-              <hr className="h-2 w-20 border-red-500" />
+              <hr className="h-2 w-16 sm:w-20 border-red-500" />
             </span>{" "}
             <span className="text-lg sm:text-3xl tracking-wide font-bold italic uppercase text-white">
               Latest Video
             </span>
             <span>
-              <hr className="h-1 w-20 border-red-500" />
+              <hr className="h-1 w-16 sm:w-20 border-red-500" />
             </span>
           </h1>
           <YoutubeVideoComponent data={youtubeData[0]} />
