@@ -99,7 +99,7 @@ const Homepage = async () => {
             </span>
           </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full">
             {/* First Item */}
             <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex flex-col space-y-2">
