@@ -32,7 +32,7 @@ const getAchievementsData = async () => {
   return data;
 };
 
-export const revalidate = 5;
+export const revalidate = 1;
 
 const Homepage = async () => {
   const data = await getEventData();
@@ -58,13 +58,13 @@ const Homepage = async () => {
         </div>
       </section>
 
-      <section className="min-h-screen text-white p-8 sm:p-16">
+      <section className="min-h-screen text-white p-8 sm:p-16" id="#events">
         <div className="flex flex-col items-center justify-center">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
               <hr className="h-2 w-20 border-red-500" />
             </span>{" "}
-            <span className="text-3xl tracking-wide font-bold italic uppercase">
+            <span className="text-xl sm:text-3xl tracking-wide font-bold italic uppercase">
               Upcoming Events
             </span>
             <span>
@@ -76,35 +76,37 @@ const Homepage = async () => {
           </div>
 
           <div className="text-center z-10">
-            <h2 className="text-3xl font-semibold tracking-widest my-4">
+            <h2 className="text-3xl font-bold tracking-widest my-4 text-blue-400">
               Arena Address
             </h2>
-            <p className="text-xl font-semibold my-4">
+            <p className="text-xl font-medium my-4 tracking-widest">
               798 Oakland Drive <br /> Kalamazoo, MI 49008
             </p>
           </div>
         </div>
       </section>
       <section className="min-h-screen p-8 sm:p-16">
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col justify-center items-center p-8">
           <h1 className="inline-flex flex-row items-center space-x-2 text-white my-8">
             <span>
               <hr className="h-2 w-20 border-red-500" />
             </span>{" "}
-            <span className="text-3xl tracking-wide font-bold italic uppercase">
+            <span className="text-xl sm:text-3xl tracking-wide font-bold italic uppercase">
               Our Values
             </span>
             <span>
-              <hr className="h-1 w-20 border-red-500" />
+              <hr className="h-2 w-20 border-red-500" />
             </span>
           </h1>
-          <div className="flex flex-col justify-center items-center mt-8">
-            <div className="flex flex-col-reverse sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 w-full">
+            {/* First Item */}
+            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex flex-col space-y-2">
-                <h2 className="text-4xl sm:text-6xl font-bold italic uppercase text-shadow shadow-red-500">
+                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
                   COMMUNITY
                 </h2>
-                <span className="text-sm text-red-900">
+                <span className="text-md text-blue-500 font-bold">
                   A Warm Welcome & A New Friend
                 </span>
                 <p className="pt-4 text-md">
@@ -117,80 +119,85 @@ const Homepage = async () => {
               </div>
               <img
                 src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4 shadow-slate-950"
-              ></img>
+                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4 shadow-slate-950"
+              />
             </div>
-            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
-              ></img>
+
+            {/* Second Item */}
+            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex flex-col space-y-2">
-                <h2 className="text-6xl uppercase">Growth</h2>
-                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
+                  INCLUSIVITY
+                </h2>
+                <span className="text-md text-blue-500 font-bold">
+                  For One & For All
+                </span>
                 <p className="pt-4 text-md">
-                  We believe in Community. From our weekly events to our annual
-                  festivals and charity fundraisers, we strive to build
-                  connections with one-another beyond just the realm of gaming.
-                  With games serving as a common ground to meet over, we forge
-                  life-long friendships and lift each other up.
-                </p>
-              </div>
-            </div>
-            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex flex-col-reverse sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
-              <div className="flex flex-col space-y-2">
-                <h2 className="text-6xl uppercase">Growth</h2>
-                <span className="text-sm">A Warm Welcome & A New Friend</span>
-                <p className="pt-4 text-md">
-                  We believe in Community. From our weekly events to our annual
-                  festivals and charity fundraisers, we strive to build
-                  connections with one-another beyond just the realm of gaming.
-                  With games serving as a common ground to meet over, we forge
-                  life-long friendships and lift each other up.
+                  We believe in Inclusivity. All are welcome in our community,
+                  regardless of skill, gender, sexuality, race, or faith. We
+                  accept all who are willing to treat others with respect and
+                  kindness, and harbor no space for hate.
                 </p>
               </div>
               <img
                 src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
-              ></img>
+                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
+              />
             </div>
-            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white sm:w-[60%] space-x-2">
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56  h-56 w-full mb-4"
-              ></img>
+
+            {/* Third Item */}
+            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex flex-col space-y-2">
-                <h2 className="text-6xl uppercase">Growth</h2>
-                <span className="text-sm">A Warm Welcome & A New Friend</span>
+                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
+                  GROWTH
+                </h2>
+                <span className="text-md text-blue-500 font-bold">
+                  Dedication & Improvement
+                </span>
                 <p className="pt-4 text-md">
-                  We believe in Community. From our weekly events to our annual
-                  festivals and charity fundraisers, we strive to build
-                  connections with one-another beyond just the realm of gaming.
-                  With games serving as a common ground to meet over, we forge
-                  life-long friendships and lift each other up.
+                  We believe in Growth. We work to improve ourselves each day,
+                  providing help and encouragement to those in our community who
+                  want to do the same. Our dedication to our passions lead us to
+                  our hard earned progress.
                 </p>
               </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
+              />
             </div>
-            <hr className="h-1 sm:w-[65%] w-[80%] text-white" />
+
+            {/* Fourth Item */}
+            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
+                  VICTORY
+                </h2>
+                <span className="text-md text-blue-500 font-bold">
+                  Competition & Success
+                </span>
+                <p className="pt-4 text-md">
+                  We believe in Victory. Fight on fight on for Western; over
+                  one, over all we will reign. Fight, Broncos fight, fight with
+                  all your might. Western win this game!
+                </p>
+              </div>
+              <img
+                src="/hero.jpg"
+                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
+              />
+            </div>
           </div>
         </div>
       </section>
+
       <section className="min-h-screen p-8 sm:p-16">
-        <div className="flex flex-col justify-center items-center text-white">
+        <div className="flex flex-col justify-center items-center text-white space-y-8">
           <h1 className="inline-flex flex-row items-center space-x-2">
             <span>
               <hr className="h-2 w-20 border-red-500" />
             </span>{" "}
-            <span className="text-3xl tracking-wide font-bold italic uppercase">
+            <span className="text-lg sm:text-3xl tracking-wide font-bold italic uppercase">
               Recent Achievements
             </span>
             <span>
@@ -205,31 +212,43 @@ const Homepage = async () => {
         </div>
       </section>
       <section className="min-h-screen p-8 sm:p-16">
-        <div className="flex flex-col justify-center items-center">
-          <h1>Latest Video</h1>
+        <div className="flex flex-col justify-center items-center space-y-8">
+          <h1 className="inline-flex flex-row items-center space-x-2">
+            <span>
+              <hr className="h-2 w-20 border-red-500" />
+            </span>{" "}
+            <span className="text-lg sm:text-3xl tracking-wide font-bold italic uppercase text-white">
+              Latest Video
+            </span>
+            <span>
+              <hr className="h-1 w-20 border-red-500" />
+            </span>
+          </h1>
           <YoutubeVideoComponent data={youtubeData[0]} />
         </div>
       </section>
       <footer className="p-4">
         <div className="flex flex-col justify-center items-center space-y-4">
-          <h1>Follow Us</h1>
+          <h1 className="text-blue-500 text-center text-2xl italic font-bold uppercase">
+            Follow Us
+          </h1>
           <div className="flex flex-row justify-center items-center">
-            <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl mt-4">
-              <Link href="/">
-                <FaTwitter />
+            <ul className="flex flex-row justify-center items-center space-x-4 text-red-500 text-2xl my-4">
+              <Link href="/" className="px-4">
+                <FaTwitter className="w-8 h-8" />
               </Link>
-              <Link href="/">
-                <FaYoutube />
+              <Link href="/" className="px-4">
+                <FaYoutube className="w-8 h-8" />
               </Link>
-              <Link href="/">
-                <FaTwitch />
+              <Link href="/" className="px-4">
+                <FaTwitch className="w-8 h-8" />
               </Link>
-              <Link href="/">
-                <FaInstagram />
+              <Link href="/" className="px-4">
+                <FaInstagram className="w-8 h-8" />
               </Link>
             </ul>
           </div>
-          <span>© 2023 Club Esports at WMU</span>
+          <span className="text-white">© 2023 Club Esports at WMU</span>
         </div>
       </footer>
     </main>
