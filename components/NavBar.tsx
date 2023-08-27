@@ -99,7 +99,7 @@ const NavBar = () => {
                     href="#about"
                     className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
-                    <span className="text-lg">Events</span>
+                    <span className="text-lg">About</span>
                   </Link>
                 </li>
                 <li className="my-4">
@@ -108,7 +108,7 @@ const NavBar = () => {
                     target="_blank"
                     className="rounded hover:bg-violet-800 hover:bg-opacity-60 transition ease-in-out duration-150 py-4 px-8"
                   >
-                    <span className="text-lg">Events</span>
+                    <span className="text-lg">Merch</span>
                   </Link>
                 </li>
               </ul>
