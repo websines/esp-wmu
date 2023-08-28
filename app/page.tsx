@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { client } from "@/lib/sanity";
+import Values from "@/components/Values";
 
 const getEventData = async () => {
   const query = `*[_type=="event"]|order(_createdAt desc)`;
@@ -31,6 +32,11 @@ const getAchievementsData = async () => {
   const data = await client.fetch(query);
   return data;
 };
+const getValuesData = async () => {
+  const query = `*[_type=="values"]|order(_createdAt desc)`;
+  const data = await client.fetch(query);
+  return data;
+};
 
 export const revalidate = 1;
 
@@ -38,6 +44,7 @@ const Homepage = async () => {
   const data = await getEventData();
   const youtubeData = await getYoutubeData();
   const achievements = await getAchievementsData();
+  const values = await getValuesData();
   return (
     <main
       className="min-h-screen bg-center bg-cover bg-no-repeat backdrop-blur-md overlay relative"
@@ -100,93 +107,9 @@ const Homepage = async () => {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full">
-            {/* First Item */}
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
-              <div className="flex flex-col space-y-2">
-                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
-                  COMMUNITY
-                </h2>
-                <span className="text-md text-blue-500 font-bold">
-                  A Warm Welcome & A New Friend
-                </span>
-                <p className="pt-4 text-md">
-                  We believe in Community. From our weekly events to our annual
-                  festivals and charity fundraisers, we strive to build
-                  connections with one-another beyond just the realm of gaming.
-                  With games serving as a common ground to meet over, we forge
-                  life-long friendships and lift each other up.
-                </p>
-              </div>
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4 shadow-slate-950"
-              />
-            </div>
-
-            {/* Second Item */}
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
-              <div className="flex flex-col space-y-2">
-                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
-                  INCLUSIVITY
-                </h2>
-                <span className="text-md text-blue-500 font-bold">
-                  For One & For All
-                </span>
-                <p className="pt-4 text-md">
-                  We believe in Inclusivity. All are welcome in our community,
-                  regardless of skill, gender, sexuality, race, or faith. We
-                  accept all who are willing to treat others with respect and
-                  kindness, and harbor no space for hate.
-                </p>
-              </div>
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
-              />
-            </div>
-
-            {/* Third Item */}
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
-              <div className="flex flex-col space-y-2">
-                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
-                  GROWTH
-                </h2>
-                <span className="text-md text-blue-500 font-bold">
-                  Dedication & Improvement
-                </span>
-                <p className="pt-4 text-md">
-                  We believe in Growth. We work to improve ourselves each day,
-                  providing help and encouragement to those in our community who
-                  want to do the same. Our dedication to our passions lead us to
-                  our hard earned progress.
-                </p>
-              </div>
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
-              />
-            </div>
-
-            {/* Fourth Item */}
-            <div className="flex flex-col sm:flex-row p-4 items-center justify-center text-white space-y-4 sm:space-y-0 sm:space-x-8">
-              <div className="flex flex-col space-y-2">
-                <h2 className="text-4xl sm:text-6xl font-bold drop-shadow-lg italic uppercase shadow-red-500">
-                  VICTORY
-                </h2>
-                <span className="text-md text-blue-500 font-bold">
-                  Competition & Success
-                </span>
-                <p className="pt-4 text-md">
-                  We believe in Victory. Fight on fight on for Western; over
-                  one, over all we will reign. Fight, Broncos fight, fight with
-                  all your might. Western win this game!
-                </p>
-              </div>
-              <img
-                src="/hero.jpg"
-                className="rounded object-cover sm:w-56 sm:h-56 h-56 w-full mb-4"
-              />
-            </div>
+            {values.map((data: any) => (
+              <Values data={data} />
+            ))}
           </div>
         </div>
       </section>
