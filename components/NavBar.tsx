@@ -6,8 +6,9 @@ import Image from "next/image";
 import { FaTwitch, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
+import { urlFor } from "@/lib/sanity";
 
-const NavBar = () => {
+const NavBar = ({ data }: any) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuVariants = {
@@ -21,7 +22,7 @@ const NavBar = () => {
         <div className="flex flex-row space-x-2 justify-center items-center">
           <Link href="/">
             <Image
-              src="/horse.png"
+              src={urlFor(data[0].image).url()}
               alt="logo"
               className="w-12 h-12"
               height={1000}
@@ -29,7 +30,7 @@ const NavBar = () => {
             />
           </Link>
           <h1 className="text-white text-xl font-semibold italic">
-            Club Esports at WMU
+            {data[0].title}
           </h1>
         </div>
         <div className="hidden sm:flex space-x-6 items-center justify-between">

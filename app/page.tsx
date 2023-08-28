@@ -38,6 +38,12 @@ const getValuesData = async () => {
   return data;
 };
 
+const getLogoData = async () => {
+  const query = `*[_type=="logo"]|order(_createdAt desc)`;
+  const data = await client.fetch(query);
+  return data;
+};
+
 export const revalidate = 1;
 
 const Homepage = async () => {
@@ -45,12 +51,13 @@ const Homepage = async () => {
   const youtubeData = await getYoutubeData();
   const achievements = await getAchievementsData();
   const values = await getValuesData();
+  const logo = await getLogoData();
   return (
     <main
       className="min-h-screen bg-center bg-cover bg-no-repeat backdrop-blur-md overlay relative"
       style={{ backgroundImage: 'url("/basic_bg_main.jpg")' }}
     >
-      <NavBar />
+      <NavBar data={logo} />
       <section
         className="min-h-screen bg-center bg-cover relative local-overlay flex items-center justify-center"
         style={{ backgroundImage: 'url("/header_bg.jpg")' }}
